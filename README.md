@@ -3,3 +3,4 @@ The server code is generated with:
 `java -jar swagger-codegen-cli-3.0.34.jar generate -i task.yaml -l go-server -o ./swag-server`
 Where `swagger-codegen-cli-3.0.34.jar` is the downloaded binary (for OpenAPI v3) from the Swagger Codegen website.
 Note that this also creates a copy of the spec in `./swag-server/api/swagger.yaml`. That copy is slightly different from the input `task.yaml` - it's canonicalized and reformatted by the code generator.
+Had to rename `go` dir to `swagger` to align with package name (for modules).

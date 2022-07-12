@@ -11,6 +11,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	// WARNING!
 	// Change this to a fully-qualified import path
@@ -19,13 +20,11 @@ import (
 	//
 	//    sw "github.com/myname/myrepo/go"
 	//
-	sw "./go"
+	"example.com/internal/swagger"
 )
 
 func main() {
 	log.Printf("Server started")
-
-	router := sw.NewRouter()
-
-	log.Fatal(http.ListenAndServe(":8080", router))
+	router := swagger.NewRouter()
+	log.Fatal(http.ListenAndServe("localhost:"+os.Getenv("SERVERPORT"), router))
 }
